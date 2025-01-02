@@ -29,7 +29,7 @@ def main(start_date=None, end_date=None):
     snow_to_dt = to_dt.replace('-', '_')
 
     snow = SnowflakeEngine(snow_user, snow_pwd, snow_acct, snow_wh)
-    snow.set_db('RAW_DATA_LOADS_DB')
+    snow.set_db('RAW')
     snow.set_schema('MIXPANEL_TEMP')
     snow.set_table(f'MP_EVENTS_{snow_from_dt}_to_{snow_to_dt}')
     snow.set_stage('S3_MIXPANEL_EVENTS')
