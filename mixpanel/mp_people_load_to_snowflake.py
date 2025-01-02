@@ -27,8 +27,8 @@ def main():
     snow_from_dt = dt1.replace('-', '_')
 
     snow = SnowflakeEngine(snow_user, snow_pwd, snow_acct, snow_wh)
-    snow.set_db('RAW_DATA_LOADS_DB')
-    snow.set_schema('MIXPANEL_TEMP')
+    snow.set_db('RAW')
+    snow.set_schema('MP_TEMP')
     snow.set_table(f'MP_PEOPLE_LAST_SEEN_{snow_from_dt}')
     snow.set_stage('S3_MIXPANEL_PEOPLE')
     snow.make_engine()
